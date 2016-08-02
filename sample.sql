@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 26, 2016 at 12:07 AM
+-- Generation Time: Aug 02, 2016 at 07:03 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.18
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `sampleInterview`
+-- Database: `sampleCake3`
 --
 
 -- --------------------------------------------------------
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `brands` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `brands`
@@ -42,7 +42,8 @@ CREATE TABLE IF NOT EXISTS `brands` (
 
 INSERT INTO `brands` (`id`, `name`, `image`, `created`, `modified`) VALUES
 (1, 'Testing 1', 'https://think.storage.googleapis.com/images/brand-lift-lg.jpg', '2016-07-25 18:14:10', '2016-07-25 18:14:10'),
-(2, 'Testing 2', 'http://www.ethoswatches.com/the-watch-guide/wp-content/uploads/2014/09/rolex-logo.jpg', '2016-07-25 18:26:25', '2016-07-25 18:26:25');
+(2, 'Testing 2', 'http://www.ethoswatches.com/the-watch-guide/wp-content/uploads/2014/09/rolex-logo.jpg', '2016-07-25 18:26:25', '2016-07-25 18:26:25'),
+(3, 'Testing 3', 'http://www.powerhomebiz.com/wp-content/uploads/2012/05/branding.jpeg', '2016-07-25 19:14:19', '2016-07-25 19:14:19');
 
 -- --------------------------------------------------------
 
@@ -85,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `products`
@@ -93,7 +94,8 @@ CREATE TABLE IF NOT EXISTS `products` (
 
 INSERT INTO `products` (`id`, `brand_id`, `name`, `description`, `price`, `image`, `created`, `modified`) VALUES
 (1, 1, 'Some Testing Product', 'There is some desc', 449, 'https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png', '2016-07-25 18:19:12', '2016-07-25 18:19:12'),
-(2, 2, 'Rollex New Watch', 'Best watch in the world', 455, 'http://www.compareraja.in/blog/wp-content/uploads/2012/12/omega-watch.jpg', '2016-07-25 18:27:27', '2016-07-25 18:27:44');
+(2, 2, 'Rollex New Watch', 'Best watch in the world', 455, 'http://www.compareraja.in/blog/wp-content/uploads/2012/12/omega-watch.jpg', '2016-07-25 18:27:27', '2016-07-25 18:27:44'),
+(3, 2, 'Some Laptop', 'there is some laptop', 88788, 'http://technobrij.com/wp-content/uploads/2014/05/Acer-Aspire-E1-570-6803-15.6-Inch-Laptop.jpg', '2016-07-25 19:00:15', '2016-07-25 19:00:39');
 
 -- --------------------------------------------------------
 
@@ -104,21 +106,22 @@ INSERT INTO `products` (`id`, `brand_id`, `name`, `description`, `price`, `image
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `created`, `modified`) VALUES
-(7, 'Avneesh', 'Gupta', 'avneesh@gmail.com', '$2y$10$J/i84lg0pvxfisy0Ug2O3.Z5e3HB8khDNV.7QkUSkSCOZnhHrHZGu', '2016-07-25 18:11:25', '2016-07-25 18:11:25');
+(7, 'Avneesh', 'Gupta', 'avneesh@gmail.com', '$2y$10$J/i84lg0pvxfisy0Ug2O3.Z5e3HB8khDNV.7QkUSkSCOZnhHrHZGu', '2016-07-25 18:11:25', '2016-07-25 18:11:25'),
+(8, 'Haha Emo ☺? ? ???', 'Working ???????', 'here1@yopmail.com', '$2y$10$q.fH4SSQw5xrgqMAzWHr9etrOqMmRoV9Wd2HqJERATbuqPbWsxFxu', '2016-08-02 11:27:08', '2016-08-02 11:27:08');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
